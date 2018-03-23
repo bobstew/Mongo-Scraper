@@ -41,7 +41,7 @@ app.engine("handlebars", exphbs({
 app.set("view engine", "handlebars");
 
 // Database configuration with mongoose
-mongoose.connect("");
+mongoose.connect("mongodb://localhost/my_database");
 //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
