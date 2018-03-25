@@ -43,7 +43,7 @@ app.set("view engine", "handlebars");
 var databaseUrl= 'mongodb://localhost/my_database';
 
 if (process.env.MONGODB_URI) {
-  mongoose.connect(proces.env.MONGODB_URI);
+  mongoose.connect(process.env.MONGODB_URI);
 } else {
   mongoose.connect(databaseUrl);
 }
