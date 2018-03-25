@@ -40,9 +40,17 @@ app.engine("handlebars", exphbs({
 }));
 app.set("view engine", "handlebars");
 
+var databaseUrl= 'mongodb://localhost/my_database';
+
+if (process.env.MONGODB_URI) {
+  mongoose.connect(proces.env.MONGODB_URI);
+} else {
+  mongoose.connect(databaseUrl);
+}
+
 // Database configuration with mongoose
-mongoose.connect("mongodb://localhost/my_database");
-//mongoose.connect("mongodb://localhost/mongoscraper");
+// mongoose.connect("mongodb://localhost/my_database");
+// //mongoose.connect("mongodb://localhost/mongoscraper");
 var db = mongoose.connection;
 
 // Show any mongoose errors
